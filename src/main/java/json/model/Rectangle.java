@@ -1,4 +1,4 @@
-package newGeoObjects;
+package json.model;
 
 import java.awt.Point;
 
@@ -8,6 +8,7 @@ public class Rectangle extends AbstractShapes
     private Point topRight;
     private Point bottomLeft;
     private Point bottomRight;
+    private String name;
     
     public Rectangle(int x, int y, int width, int height) {
         setPoint(new Point(x,y), height, width);
@@ -36,5 +37,15 @@ public class Rectangle extends AbstractShapes
         this.topRight = new Point((topLeft.x + width), topLeft.y);
         this.bottomLeft = new Point(topLeft.x, (topLeft.y + height));
         this.bottomRight = new Point(topLeft.x + width, topLeft.y + height);
+    }
+    
+    @Override
+    public String getName()
+    {
+        return name;
+    }
+    
+    public void setName(String shapeName) {
+        this.name = shapeName;
     }
 }

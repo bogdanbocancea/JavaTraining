@@ -1,4 +1,4 @@
-package newGeoObjects;
+package json.model;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -8,7 +8,7 @@ import java.awt.Graphics2D;
 import javax.swing.JComponent;
 
 public class Window extends JComponent {
-
+    private static final long serialVersionUID = 5641291999761510743L;
     private AbstractShapes shape;
     
     public Window(AbstractShapes shape) {

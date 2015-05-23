@@ -1,4 +1,4 @@
-package newGeoObjects;
+package json.model;
 
 import java.awt.Graphics;
 
