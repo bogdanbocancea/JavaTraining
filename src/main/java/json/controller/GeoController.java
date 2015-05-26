@@ -74,7 +74,8 @@ public class GeoController {
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
         
         try {
-            writer.writeValue(new File("c:\\" + shape.getName() +".json"), shape);
+            //eu sunt pe MAC OS nu am c: ;)
+            writer.writeValue(new File(shape.getName() +".json"), shape);
             System.out.println(mapper.writeValueAsString(shape));
         } catch (JsonGenerationException e) {
             e.printStackTrace();
