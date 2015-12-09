@@ -80,7 +80,7 @@ public class HuffmanImplementation {
                 BufferedReader reader = Files.newBufferedReader(file, Charset.defaultCharset());
                 String line = null;
                 while ((line = reader.readLine()) != null) {
-                    content.append(line).append("/n");
+                    content.append(line).append("\n");
                 }
             }
             catch (NoSuchFileException no) {
@@ -90,13 +90,23 @@ public class HuffmanImplementation {
         else {
             throw new RuntimeException("File with extension " + extension + " not suported (for now)");
         }
+        String content2 = content.toString();
+        /*char[] char_array = content2.toCharArray();
         
-        int[] charFreqs = new int[content.toString().length()];
-        for(int i = 0; i < content.toString().length() - 1; i++) {
-            char c = content.toString().charAt(i);
+        Map<Character, Integer> charCounter = new HashMap<Character, Integer>();
+        for (char i : char_array) {
+            charCounter.put(i, charCounter.get(i) == null ? 1 : charCounter.get(i) + 1);
+        }
+        for (Character key : charCounter.keySet()) {
+            System.out.println("occurrence of '" + key + "' is  "+ charCounter.get(key));
+        }*/
+        
+        int[] charFreqs = new int[256];
+        for(int i = 0; i < content2.length() - 1; i++) {
+            char c = content2.charAt(i);
             charFreqs[c]++;
         }
-        
+       
         HuffmanTree tree = buildTree(charFreqs);
         return getValues(tree, new StringBuffer());
     }
@@ -110,7 +120,7 @@ public class HuffmanImplementation {
             List<XWPFParagraph> paragraphs = document.getParagraphs();
             System.out.println("Total number of paragraph " + paragraphs.size());
             for (XWPFParagraph para : paragraphs) {
-                content.append(para.getText()).append("/n");
+                content.append(para.getText()).append("\n");
             }
             fis.close();
             document.close();
