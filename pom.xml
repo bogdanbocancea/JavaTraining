@@ -7,6 +7,12 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>JavaTraining</name>
 	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+		<spring-web.version>5.0.3.RELEASE</spring-web.version>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -21,6 +27,25 @@
 			<version>6.1.1</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring-web.version}</version>
+		</dependency>
+		
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
 
 	</dependencies>
 </project>
